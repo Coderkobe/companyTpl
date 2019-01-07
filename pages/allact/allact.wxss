@@ -1,0 +1,70 @@
+/* pages/allact/allact.wxss */
+page{
+    background-color: #f4f4f4;
+}
+.statistics{
+    font-family: 'PingFangSC-Regular';
+    margin-bottom: 20rpx;
+}
+.statistics .title{
+    padding: 40rpx 30rpx;
+    font-size: 34rpx;
+    color: rgba(48,48,48,0.80);
+}
+.statistics .content{
+    padding: 30rpx;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px 0 rgba(217,226,233,0.50);
+}
+.s-item{
+    display: flex;
+    line-height: 46rpx;
+}
+.s-item .label{
+    width: 208rpx;
+    opacity: 0.7;
+    font-size: 24rpx;
+    color: rgba(48,48,48,0.50);
+    line-height: 23px;
+}
+.s-item .focus{
+    font-family: 'PingFangSC-Medium';
+    font-size: 52rpx;
+    color: #303030;
+}
+.list{
+    background-color: #fff;
+}
+.i-t{
+    padding:20rpx 20rpx;
+    display:flex;
+    line-height:42rpx;
+}
+.i-t .tag-style{
+    vertical-align: middle;
+    display: inline-block;
+    height: 40rpx;
+    width: 12rpx;
+    background-color: #f15151;
+    border-radius: 4rpx;
+    margin-right: 20rpx;
+}
+.i-t .title{
+    color: #303030;
+}
+.list .item{
+    padding: 20rpx 40rpx;
+    border-top: 2rpx solid #f4f4f4;
+    border-bottom: 2rpx solid #f4f4f4;
+}
+.act-title{
+    font-family: 'PingFangSC-Regular';
+    font-size: 28rpx;
+    color: #303030;
+    margin-bottom: 20rpx;
+}
+.act-time{
+    font-family: 'PingFangSC-Regular';
+    font-size: 28rpx;
+    color: rgba(48,48,48,0.50);
+}

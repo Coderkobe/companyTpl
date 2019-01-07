@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "产品介绍",
+    "usingComponents": {
+        "caseitem": "../../components/caseitem/caseitem",
+        "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index",
+        "wxc-toast": "../../dist/packages/@minui/wxc-toast/dist/index",
+        "wxc-abnor": "../../dist/packages/@minui/wxc-abnor/dist/index"
+    }
+}

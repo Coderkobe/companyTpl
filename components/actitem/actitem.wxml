@@ -1,0 +1,19 @@
+<!--components/proitem.wxml-->
+<view class="actitem">
+    <view class="img-box">
+        <view class="img">
+            <image mode="aspectFill" src="{{imgSrc}}"></image>
+        </view>
+        <view class="img-mask"></view>
+        <view class="desc" bindtap="navigateToActDetail" data-actid="{{actId}}">
+            <view class="title">{{aiTitle}}</view>
+            <view class="intro">时间：{{aiIntro}}</view>
+            <view class="link">进入活动 ></view>
+        </view>
+        <view class="status">
+            <view class="status-ing status-img" wx:if="{{aiIng}}"></view>
+            <view class="status-ed status-img" wx:else></view>
+        </view>
+    </view> 
+  <!-- <slot></slot> -->
+</view>

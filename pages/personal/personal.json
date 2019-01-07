@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "个人中心",
+    "usingComponents": {
+        "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index",
+        "wxc-toast": "../../dist/packages/@minui/wxc-toast/dist/index"
+    }
+}

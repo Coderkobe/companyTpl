@@ -1,0 +1,7 @@
+/* pages/setting/setting.wxss */
+.setting .tips{
+    padding: 20rpx 30rpx;
+}
+.setting button{
+    background-color: #e25e16;
+}

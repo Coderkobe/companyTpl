@@ -1,0 +1,12 @@
+<!-- 首页业务案例item -->
+<view class="caseitem">
+    <view class="img-box">
+        <view class="img">
+            <image mode="aspectFill" src="{{imgSrc}}"></image>
+        </view>
+        <view class="img-mask"></view>
+        <view class="desc" bindtap="navigateToActDetail" data-caseid="{{caseId}}">
+            <view class="title">{{ciTitle}}</view>
+        </view>
+    </view> 
+</view>

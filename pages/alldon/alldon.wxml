@@ -1,0 +1,32 @@
+<!--pages/alldon/alldon.wxml-->
+<view class="all-don">
+    <view class="statistics">
+        <view class="title">你的捐助信息</view>
+        <view class="content">
+            <view class="s-item s-frequency">
+                <view class="label">参与捐助次数</view>
+                <view class="focus">{{donationCount}}次</view>
+            </view>
+            <view class="s-item s-duration">
+                <view class="label">你的捐款总金额</view>
+                <view class="focus">{{amount}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="list">
+        <view class="i-t">
+            <span class="tag-style"></span><span class="title">捐款记录</span>
+        </view>
+        <view class="item-container" wx:for="{{donList}}" wx:key="{{index}}">
+            <view class="item">
+                <view class="act-title">微信支付捐助{{item.date}}元</view>
+                <view class="act-time">{{item.sum}}</view>
+            </view>
+        </view>
+        
+    </view>
+    <view class="footer">
+        <wxc-loadmore is-end="{{true}}" text="我们认为每个生命都有权利被尊重\n我们相信每个人的心中都有一座爱与善的花园" icon="false"></wxc-loadmore>
+    </view>
+</view>
+

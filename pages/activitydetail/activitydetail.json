@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "活动详情",
+    "usingComponents": {
+        "wxc-button": "../../dist/packages/@minui/wxc-button/dist/index",
+        "wxc-toast": "../../dist/packages/@minui/wxc-toast/dist/index"
+    }
+}

@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/product/product",
+    "pages/donation/donation",
+    "pages/personal/personal",
+    "pages/activitydetail/activitydetail",
+    "pages/register/register",
+    "pages/projectdetail/projectdetail",
+    "pages/editperson/editperson",
+    "pages/allact/allact",
+    "pages/alldon/alldon",
+    "pages/setting/setting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e25e16",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#666666",
+    "selectedColor": "#666666",
+    "backgroundColor": "#fff",
+    "borderStyle": "#D9E2E9",
+    "list": [
+      {
+        "selectedIconPath": "images/icon_home_hover.png",
+        "iconPath": "images/icon_home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/icon_active_hover.png",
+        "iconPath": "images/icon_active.png",
+        "pagePath": "pages/product/product",
+        "text": "产品介绍"
+      },
+      {
+        "selectedIconPath": "images/icon_give_hover.png",
+        "iconPath": "images/icon_give.png",
+        "pagePath": "pages/donation/donation",
+        "text": "企业动态"
+      },
+      {
+        "selectedIconPath": "images/icon_mine_hover.png",
+        "iconPath": "images/icon_mine.png",
+        "pagePath": "pages/personal/personal",
+        "text": "关于我们"
+      }
+    ]
+  }
+}

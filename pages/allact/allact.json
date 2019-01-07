@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "活动记录",
+    "usingComponents": {
+        "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index"
+    }
+}

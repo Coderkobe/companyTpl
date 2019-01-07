@@ -1,0 +1,5 @@
+<!--pages/setting/setting.wxml-->
+<view class="setting">
+    <view class="tips">点击去设置进行授权设置</view>
+    <button type="primary" open-type="openSetting" bindopensetting="openSetting">去设置</button>
+</view>

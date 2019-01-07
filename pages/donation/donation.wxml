@@ -1,0 +1,95 @@
+<!--pages/donation.wxml-->
+<view class="donation">
+    <!-- <navigator url="/pages/donatenow/donatenow">我要捐助</navigator> -->
+    <view class="header">
+        <view class="h-title">
+            今天您想和纯山一起帮助他们吗？
+        </view>
+        <view class="banner">
+            <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" 
+                interval="{{interval}}" 
+                duration="{{duration}}" 
+                indicator-dots="true" 
+                indicator-active-color="#fff" 
+                previous-margin="40rpx"
+                next-margin="40rpx">
+                <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+                    <swiper-item>
+                        <!-- width="325" height="174" -->
+                        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </view>
+    <view class="donate-now">
+        <view class="donate-title">爱心捐助</view>
+        <view class="money-tag">
+            <span class="{{currentTab==0?'money-tag-active':''}}" data-current="0" data-number="5" bindtap="tabAmount">5元</span>
+            <span class="{{currentTab==1?'money-tag-active':''}}" data-current="1" data-number="10" bindtap="tabAmount">10元</span>
+            <span class="{{currentTab==2?'money-tag-active':''}}" data-current="2" data-number="20" bindtap="tabAmount">20元</span>
+            <span class="{{currentTab==3?'money-tag-active':''}}" data-current="3" data-number="50" bindtap="tabAmount">50元</span>
+        </view>
+        <view class="money">
+            <label>其他金额</label>
+            <input class="{{currentTab==4?'money-tag-active':''}}" data-current="4" data-number="" placeholder-class="phcolor" type="digit" bindinput="amountInput" placeholder="请输入捐款金额数" bindtap="tabAmount" value="{{amountTxt}}" maxlength="8"/>
+        </view>
+        <view class="person">
+            <label>您的姓名</label>
+            <input placeholder-class="phcolor" type="text" bindinput="nameInput" placeholder="请输入您的姓名" />
+        </view>
+        <view class="phone" wx:if="{{phoneInputIsShow}}">
+            <label>您的电话</label>
+            <input placeholder-class="phcolor" type="number" bindinput="phoneInput" placeholder="请输入您的电话" maxlength="11"/>
+        </view>
+        <view class="phone" wx:if="{{phoneInputIsShow}}">
+            <label>您的邮寄地址</label>
+            <input placeholder-class="phcolor" type="text" bindinput="addressInput" placeholder="请输入您的联系地址" maxlength="100"/>
+        </view>
+        <view class="tips">
+            基于成本原因，纯山教育基金会将为每笔捐赠100元以上的有发票需要的捐款人开具并邮寄国家统一捐赠票据，请留下收件人邮寄信息及联系方式。感谢您的理解和支持！
+        </view>
+    </view>
+    <!-- <view wx:if="{{ isLogin }}" class="h-btn-area" bindtap="onSubmit">
+        <view>立即捐款</view>
+    </view> -->
+    <button wx:if="{{isLogin}}" class="h-btn-area" bindtap="onSubmit" disabled="{{donatBtnDisabled}}">立即捐款</button>
+    <button wx:else class="h-btn-area" open-type="getUserInfo" bindgetuserinfo="getUserInfo">立即捐款</button>
+    <swiper class="donation-info-container" indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" vertical="true">
+        <view wx:for="{{result}}" wx:key="{{index}}" wx:for-item="item">
+            <swiper-item catchtouchmove="stopTouchMove">
+                <block wx:for="{{item}}" wx:key="{{index}}" wx:for-item="i">
+                    <view class="list">
+                        <view class="list-item">
+                            <view class="info">
+                                <span>{{i.donor}}</span>
+                                捐助了
+                                <span>{{i.sum}}</span>
+                                元
+                            </view>
+                            <view class="time">
+                                {{i.date}}
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </swiper-item>
+        </view>
+    </swiper>
+    <view class="statistics">
+        <view class="s-title">截至目前</view>
+        <view class="s-info">已收到<span class="s-light">{{donationCount}}</span>次爱心志愿者的捐赠</view>
+        <view class="s-info">总捐款金额<span class="s-light">{{donationAmount}}</span>元</view>
+        <!-- <view class="s-info">投入捐赠资金项目有<span class="s-light">{{projectAmount}}</span>个</view> -->
+    </view>
+    <view class="footer">
+        <wxc-loadmore is-end="{{true}}" text="我们认为每个生命都有权利被尊重\n我们相信每个人的心中都有一座爱与善的花园" icon="false"></wxc-loadmore>
+    </view> 
+    <wxc-toast
+    is-show="{{$toast.show}}"
+    icon="{{$toast.icon}}"
+    text="{{$toast.text}}"
+    ></wxc-toast>        
+</view>

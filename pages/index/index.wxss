@@ -1,0 +1,165 @@
+/**index.wxss**/
+.index{
+  background-color: #f9f9f9;
+}
+.banner{
+  width: 100%;
+  height: 360rpx;
+}
+.banner image{
+  width: 100%;
+  height: 100%;
+}
+.news-slide{
+  height: 120rpx;
+  line-height: 100rpx;
+  padding: 0 30rpx;
+}
+.list{
+  height: 60rpx;
+  display: flex;
+  justify-content: space-between !important;
+}
+.i-t{
+  margin: 30rpx auto 20rpx 20rpx;
+}
+.i-t .title{
+  font-family: 'PingFang SC';
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+}
+.service-item, .case-item{
+  padding: 0 20rpx;
+  margin-bottom: 20rpx;
+}
+.about-box, .contact-box{
+  background: #FFFFFF;
+  border: 2rpx solid #E8E8E8;
+  margin: 0 20rpx;
+  padding: 20rpx;
+}
+.cs-logo{
+  width:382rpx;
+  height:150rpx;
+  margin:40rpx auto 74rpx;
+  display:block;
+  /* border: 1rpx solid #ccc; */
+}
+.cs-intro{
+  font-family: 'PingFangSC-Regular';
+  font-size: 34rpx;
+  color: #303030;
+  line-height: 1.8;
+}
+.second-intro{
+  margin-top: 20rpx;
+}
+.cs-name{
+  text-align: center;
+  margin: 40rpx auto 22rpx;
+  font-family: 'PingFangSC-Medium';
+  font-size: 36rpx;
+  color: #303030;
+}
+.certificate-area{
+  width: 580rpx;
+  margin: 0 auto;
+  margin-bottom: 40rpx;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.certificate-area image{
+  width: 260rpx;
+  height: 188rpx;
+  display: block;
+  /* border: 1rpx solid #ccc; */
+}
+.certificate-area image:first-child{
+  margin-right: 60rpx;
+}
+.contact-inner{
+  margin:40rpx auto 50rpx 20rpx;
+}
+.qrode{
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 60rpx;
+  line-height: 40rpx;
+}
+.qrode-img{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 22rpx;
+  /* border: 1rpx solid #ccc; */
+}
+.qrode-desc{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.qrode-title{
+  font-family: 'PingFangSC-Medium';
+  font-size: 34rpx;
+  color: #303030;
+}
+.qrode-text{
+  font-family: 'PingFangSC-Regular';
+  font-size: 28rpx;
+  color: #000000;
+  line-height: 48rpx;
+}
+.list{
+  font-family: 'PingFangSC-Regular';
+  font-size: 11pt;
+  color: #303030;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 1.8;
+}
+.link-list{
+  font-family: 'PingFangSC-Medium';
+  font-size: 28rpx;
+  color: #303030;
+  margin: 60rpx auto 50rpx;
+  display: flex;
+  justify-content: flex-start;
+}
+.link-list navigator:first-child{
+  margin-left: 20rpx;
+}
+.link-list view{
+  color: #dfdfdf;
+  margin: 0 60rpx;
+}
+.J_Popup .auth-container{
+  background-color: #fff;
+  width: 650rpx;
+  height: 400rpx;
+  position: relative;
+  text-align: center;
+}
+.auth-title{
+  font-family: 'PingFangSC-Medium';
+  font-size: 40rpx;
+  color: #000;
+  margin-top: 60rpx;
+}
+.auth-desc{
+  font-size: 13px;
+  color: #909090;
+  margin-top: 30rpx;
+}
+.authorization-now{
+  width: 100%;
+  height: 90rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background: #e25e16;
+  box-shadow: 0 3px 8px 0 rgba(140,140,140,0.50);
+  position: absolute;
+  bottom: 0;
+  border-radius: 0;
+}

@@ -1,0 +1,61 @@
+<!--pages/personal.wxml-->
+
+<!-- <button open-type="getUserInfo" bindgetuserinfo="fetchUserInfo">授权登录</button> -->
+<view class="mine" >
+    <view class="person-info" wx:if="{{unauthorized}}">
+        <view class="title">HI~我们期待与你一起做更加美好的事情～</view>
+        <navigator wx:if="{{ isLogin }}" url="/pages/register/register">注册成为志愿者</navigator>
+        <button wx:else class="authorization-now" open-type="getUserInfo" bindgetuserinfo="getUserInfo">注册成为志愿者</button>
+    </view>
+    <view class="person-info" wx:if="{{!unauthorized}}">
+        <image class="avator" src="{{avatar}}" bindtap="navigateToEdit"/>
+        <view class="user-name">{{nickname}}</view>
+        <view class="number">志愿者编号：{{volunteer.numbering}}</view>
+        <view class="statistics">
+            <view class="s-volunteer">
+                <view class="s-num">{{statistics.duration}}</view>
+                <view>已参加志愿者时长/时</view>
+            </view>
+            <view class="s-donation">
+                <view class="s-num">{{statistics.donation_count}}</view>
+                <view>累计爱心捐款/次</view>
+            </view>
+        </view>
+        <view class="scan-qrode-box">
+            <view class="scan-qrode" bindtap="scanQrode"></view>
+            <view>活动签到</view>
+        </view>
+    </view>
+    <view class="p-item volunteer">
+        <view class="i-t">
+            <view><span class="tag-style"></span><span class="title">志愿者服务</span></view>
+            <navigator wx:if="{{activity != null && !unauthorized}}" url="/pages/allact/allact">查看全部活动详情 ></navigator>
+        </view>
+        <view class="content">
+            <view class="default-con" wx:if="{{activity == null || unauthorized}}">我们一直期待你参与志愿活动</view>
+            <view class="default-con con-act" wx:else>
+                {{activity.date}} {{activity.activity.title}}
+            </view>
+        </view>
+    </view>
+    <view class="p-item donation">
+        <view class="i-t">
+            <view><span class="tag-style"></span><span class="title">爱心捐助</span></view>
+            <navigator wx:if="{{donation != null}}" url="/pages/alldon/alldon">查看全部捐款详情 ></navigator>
+        </view>
+        <view class="content">
+            <view class="default-con" wx:if="{{donation == null}}">山区学子期待你的帮助</view>
+            <view class="default-con con-don" wx:else>
+                {{donation.date}} 微信支付捐款成功 {{donation.sum}} 元
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <wxc-loadmore is-end="{{true}}" text="技术支持\n@西安水花科技有限责任公司" icon="false"></wxc-loadmore>
+    </view>
+    <wxc-toast
+    is-show="{{$toast.show}}"
+    icon="{{$toast.icon}}"
+    text="{{$toast.text}}"
+    ></wxc-toast>
+</view>

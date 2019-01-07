@@ -1,0 +1,11 @@
+{
+    "navigationBarTitleText": "水花科技",
+    "usingComponents": {
+        "wxc-toast": "../../dist/packages/@minui/wxc-toast/dist/index",
+        "serviceitem": "../../components/serviceitem/serviceitem",
+        "caseitem": "../../components/caseitem/caseitem",
+        "wxc-loadmore": "../../dist/packages/@minui/wxc-loadmore/dist/index",
+        "wxc-list": "../../dist/packages/@minui/wxc-list/dist/index",
+        "wxc-popup": "../../dist/packages/@minui/wxc-popup/dist/index"
+    }
+}

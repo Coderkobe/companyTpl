@@ -1,0 +1,88 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.2.2",
+	"appid": "wxa95d70c3ae61ed50",
+	"projectname": "%E5%85%AC%E5%8F%B8%E6%A8%A1%E6%9D%BF",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 7,
+			"list": [
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/personal/personal",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐助",
+					"pathName": "pages/donation/donation",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿活动",
+					"pathName": "pages/activity/activity",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "编辑信息",
+					"pathName": "pages/editperson/editperson",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "志愿者记录",
+					"pathName": "pages/allact/allact",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "捐助记录",
+					"pathName": "pages/alldon/alldon",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "活动详情",
+					"pathName": "pages/activitydetail/activitydetail"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,119 @@
+<!--index.wxml-->
+<view class="index">
+  <!-- 首页banner -->
+  <view class="banner">
+    <image src="{{banner}}" mode="aspectFit"/>
+  </view>
+  <!-- 公司新闻 -->
+  <view class="news">
+    <view class="i-t">
+      <view class="title">公司新闻</view>
+    </view>
+    <swiper class="news-slide" indicator-dots="{{indicatorDots}}" autoplay="true" interval="2000" duration="500" vertical="true" circular="true">
+      <block wx:for="{{newsList}}" wx:key="{{index}}">
+        <view wx:for="{{newsList}}" wx:key="{{index}}" wx:for-item="item">
+          <swiper-item>
+            <block wx:for="{{item}}" wx:key="{{index}}" wx:for-item="i">
+              <view class="list" hover-class="none" hover-stop-propagation="false">
+                <view class="">{{i.title}}</view>
+                <view class="">
+                  {{i.date}}
+                </view>
+              </view>
+            </block>
+          </swiper-item>
+        </view>
+      </block>
+    </swiper>
+  </view>
+  <!-- 主营业务 -->
+  <!-- i-t=index-title -->
+  <view class="i-t">
+    <view class="title">主营业务</view>
+  </view>
+  <view class="service-item-container">
+    <view class="service-item" wx:for="{{serviceList}}" wx:key="{{index}}">
+      <serviceitem img-src="{{item.imgSrc}}" 
+            si-title="{{item.title}}" 
+            service-id="{{item.id}}">
+      </serviceitem>
+    </view>
+  </view>
+  <!-- 合作案例 -->
+  <view class="i-t">
+    <span class="title">合作案例</span>
+  </view>
+  <view class="case-item-container">
+    <view class="case-item" wx:for="{{caseList}}" wx:key="{{index}}">
+      <caseitem img-src="{{item.imgSrc}}" 
+            ci-title="{{item.title}}" 
+            case-id="{{item.id}}">
+      </caseitem>
+    </view>
+  </view>
+  <!-- <view class="about-box">
+    <image class="cs-logo" mode="aspectFit" src="{{logoImg}}"></image>
+    <view class="cs-intro">陕西纯山教育基金会是2006年9月在陕西省民政厅注册的公益基金会。</view>
+    <view class="cs-intro second-intro">纯山关注 6-20 岁乡村青少年的教育及发展问题。我们希望通过提供物资补充、能力建设及培训帮助这些孩子成长为独立自信、自强互助的青少年。</view>
+    <view class="cs-name">纯山教育基金会证书</view>
+    <view class="certificate-area">
+      <image mode="aspectFit" src="{{zhengshuImg}}"></image>
+      <image mode="aspectFit" src="{{zhengshu1Img}}"></image>
+    </view>
+  </view>
+  <view class="i-t">
+    <span class="tag-style"></span><span class="title">联系纯山</span>
+  </view>
+  <view class="contact-box">
+    <view class="contact-inner">
+      <view class="qrode">
+        <image class="qrode-img" mode="aspectFit" src="{{qrcodeImg}}"></image>
+        <view class="qrode-desc">
+          <view class="qrode-text">关注公众号：纯山教育基金会</view>
+          <view class="qrode-text">了解最新活动动态</view>
+        </view>
+      </view>
+      <view class="info-list">
+        <view class="list">
+          <view class="list-title">地址：</view>
+          <view class="list-text">西安市高新区团结南路23号308室</view>
+        </view>
+        <view class="list">
+          <view class="list-title">邮编：</view>
+          <view class="list-text">710075</view>
+        </view>
+        <view class="list">
+          <view class="list-title">电话：</view>
+          <view class="list-text">86-29-88327691</view>
+        </view>
+        <view class="list">
+          <view class="list-title">传真：</view>
+          <view class="list-text">86-29-88311659</view>
+        </view>
+        <view class="list">
+          <view class="list-title">邮箱：</view>
+          <view class="list-text">office@chunshan.org</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="footer">
+    <wxc-loadmore is-end="{{true}}" text="我们认为每个生命都有权利被尊重\n我们相信每个人的心中都有一座爱与善的花园" icon="false"></wxc-loadmore>
+  </view> -->
+
+  <wxc-popup class="J_Popup" animation-mode="center" align="center" locked="true">
+    <view class="auth-container">
+      <view class="auth-title">登录并授权</view>
+      <view class="auth-desc">
+        <view >申请获取一下权限</view>
+        <view >获得你的公开信息（昵称、头像）</view>
+      </view>
+      <button class="authorization-now" open-type="getUserInfo" bindgetuserinfo="getUserInfo">允许</button>
+    </view>
+  </wxc-popup>
+  <wxc-toast
+    is-show="{{$toast.show}}"
+    icon="{{$toast.icon}}"
+    text="{{$toast.text}}"
+    ></wxc-toast>
+</view>

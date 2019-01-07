@@ -1,0 +1,7 @@
+/* pages/activity.wxss */
+.activity{
+    margin: 0 20rpx;
+}
+.case-item{
+    margin: 20rpx 0;
+}

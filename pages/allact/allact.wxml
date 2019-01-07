@@ -1,0 +1,31 @@
+<!--pages/allact/allact.wxml-->
+<view class="all-act">
+    <view class="statistics">
+        <view class="title">你的志愿信息</view>
+        <view class="content">
+            <view class="s-item s-frequency">
+                <view class="label">活动参加次数</view>
+                <view class="focus">{{activityCount}}次</view>
+            </view>
+            <view class="s-item s-duration">
+                <view class="label">参加活动总时长</view>
+                <view class="focus">{{duration}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="list">
+        <view class="i-t">
+            <span class="tag-style"></span><span class="title">已参与的活动</span>
+        </view>
+        <view class="item-container" wx:for="{{donList}}" wx:key="{{index}}">
+            <view class="item">
+                <view class="act-title">{{item.activity.title}}</view>
+                <view class="act-time">{{item['created_at']}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="footer">
+        <wxc-loadmore is-end="{{true}}" text="我们认为每个生命都有权利被尊重\n我们相信每个人的心中都有一座爱与善的花园" icon="false"></wxc-loadmore>
+    </view>
+</view>
+
