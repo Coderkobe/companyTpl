@@ -19,9 +19,9 @@ Component({
   methods: {
     // 这里是一个自定义方法
     navigateToActDetail: function (e) {
-      let actId = e.currentTarget.dataset.serviceid;
+      let serviceId = e.currentTarget.dataset.serviceid;
       wx.navigateTo({
-        url: `/pages/activitydetail/activitydetail?serviceid=${serviceId}`
+        url: `/pages/servicedetail/servicedetail?serviceid=${serviceId}`
       })
     }
   }

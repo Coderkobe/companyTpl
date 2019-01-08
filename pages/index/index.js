@@ -5,6 +5,9 @@ const app = getApp()
 
 Page({
   data: {
+    navbarData: {
+      backgroundColor: '#fff'
+    },
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -42,16 +45,19 @@ Page({
     ],
     serviceList: [
       {
+        "id": 0,
         "title": "软件定制及产品方案服务 灌篮高手两个花露水",
         "imgSrc": "/images/index_service_1.png"
       },
       {
+        "id": 1,
         "title": "视觉设计",
         "imgSrc": "/images/index_service_2.png"
       }
     ],
     caseList: [
       {
+        "id": 0,
         "title": "纯山教育基金会",
         "imgSrc": "/images/index_case.png"
       }

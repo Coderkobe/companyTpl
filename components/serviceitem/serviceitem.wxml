@@ -5,7 +5,7 @@
             <image mode="aspectFill" src="{{imgSrc}}"></image>
         </view>
         <view class="img-mask"></view>
-        <view class="desc" bindtap="navigateToActDetail" data-actid="{{actId}}">
+        <view class="desc" bindtap="navigateToActDetail" data-serviceid="{{serviceId}}">
             <view class="title">{{siTitle}}</view>
         </view>
     </view> 

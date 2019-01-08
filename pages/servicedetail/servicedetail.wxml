@@ -1,0 +1,11 @@
+<!--pages/servicedetail/servicedetail.wxml-->
+<view class="service-detail" hover-class="none" hover-stop-propagation="false">
+    <view class="header" hover-class="none" hover-stop-propagation="false">
+        <image class="cover-picture" src="{{coverPicture}}"></image>
+        <view class="mask"></view>
+        <view class="article-title">{{articleTitle}}</view>
+    </view>
+    <view class="content" hover-class="none" hover-stop-propagation="false">
+        <!-- <template is="wxParse" data="{{wxParseData:content.nodes}}" /> -->
+    </view>
+</view>

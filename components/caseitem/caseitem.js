@@ -19,9 +19,9 @@ Component({
   methods: {
     // 这里是一个自定义方法
     navigateToActDetail: function (e) {
-      let actId = e.currentTarget.dataset.caseId;
+      let caseId = e.currentTarget.dataset.caseId;
       wx.navigateTo({
-        url: `/pages/activitydetail/activitydetail?caseid=${caseId}`
+        url: `/pages/casedetail/casedetail?caseid=${caseId}`
       })
     }
   }

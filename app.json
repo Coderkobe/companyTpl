@@ -10,13 +10,17 @@
     "pages/editperson/editperson",
     "pages/allact/allact",
     "pages/alldon/alldon",
-    "pages/setting/setting"
+    "pages/setting/setting",
+    "pages/casedetail/casedetail",
+    "pages/servicedetail/servicedetail",
+    "pages/productdetail/productdetail",
+    "pages/news/news"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#e25e16",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "white",
+    "navigationBarTextStyle": "black",
     "enablePullDownRefresh": false
   },
   "tabBar": {

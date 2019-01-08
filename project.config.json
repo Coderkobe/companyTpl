@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 7,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -80,7 +80,25 @@
 				{
 					"id": -1,
 					"name": "活动详情",
-					"pathName": "pages/activitydetail/activitydetail"
+					"pathName": "pages/activitydetail/activitydetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "主营业务",
+					"pathName": "pages/servicedetail/servicedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "产品介绍",
+					"pathName": "pages/productdetail/productdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业动态",
+					"pathName": "pages/news/news"
 				}
 			]
 		}
