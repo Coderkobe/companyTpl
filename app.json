@@ -44,7 +44,7 @@
       {
         "selectedIconPath": "images/icon_give_hover.png",
         "iconPath": "images/icon_give.png",
-        "pagePath": "pages/donation/donation",
+        "pagePath": "pages/news/news",
         "text": "企业动态"
       },
       {
