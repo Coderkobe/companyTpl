@@ -14,7 +14,8 @@
     "pages/casedetail/casedetail",
     "pages/servicedetail/servicedetail",
     "pages/productdetail/productdetail",
-    "pages/news/news"
+    "pages/news/news",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -50,7 +51,7 @@
       {
         "selectedIconPath": "images/icon_mine_hover.png",
         "iconPath": "images/icon_mine.png",
-        "pagePath": "pages/personal/personal",
+        "pagePath": "pages/about/about",
         "text": "关于我们"
       }
     ]
