@@ -1,2 +1,36 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<view class="about" hover-class="none" hover-stop-propagation="false">
+    <view class="logo-name" hover-class="none" hover-stop-propagation="false">
+        <image class="logo" src="{{logo}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            
+        </image>
+        <view class="name" hover-class="none" hover-stop-propagation="false">
+            水花科技
+        </view>
+    </view>
+    <view class="intro" hover-class="none" hover-stop-propagation="false">
+        <view class="sub-title" hover-class="none" hover-stop-propagation="false">
+            公司简介
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            西安水花科技致力于提供轻便、有效的互联网产品及服务。我们的使命是精心挖掘需求，耐心打磨产品，打造轻便生活。
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            提供品牌设计、logo设计；
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            提供微信小程序外包、定制、开发服务；
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            根据您的需求，为你定制各类微信小程序，快速、稳定、高效的实现您的业务需求；
+        </view>
+    </view>
+    <view class="contact" hover-class="none" hover-stop-propagation="false">
+        <view class="" hover-class="none" hover-stop-propagation="false">
+            联系电话
+        </view>
+        <view class="" hover-class="none" hover-stop-propagation="false" data-phone="029-81014150" bindtap="call">
+            029-81014150
+        </view>
+    </view>
+</view>

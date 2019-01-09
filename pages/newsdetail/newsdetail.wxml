@@ -1,0 +1,14 @@
+<!--pages/newdetail/newsdetail.wxml-->
+<view class="news-detail" hover-class="none" hover-stop-propagation="false">
+    <view class="header" hover-class="none" hover-stop-propagation="false">
+        <view class="title" hover-class="none" hover-stop-propagation="false">
+            {{newsTitle}}
+        </view>
+        <view class="date" hover-class="none" hover-stop-propagation="false">
+            时间：{{newsDate}}
+        </view>
+    </view>
+    <view class="content" hover-class="none" hover-stop-propagation="false">
+        
+    </view>
+</view>

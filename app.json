@@ -15,7 +15,9 @@
     "pages/servicedetail/servicedetail",
     "pages/productdetail/productdetail",
     "pages/news/news",
-    "pages/about/about"
+    "pages/about/about",
+    "pages/actdetail/actdetail",
+    "pages/newsdetail/newsdetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

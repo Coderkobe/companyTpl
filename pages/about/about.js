@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    logo: '/images/logo.png',
   },
 
   /**
@@ -62,5 +62,11 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  call: function(e) {
+    wx.makePhoneCall({
+      phoneNumber: e.target.dataset.phone // 仅为示例，并非真实的电话号码
+    })
   }
 })

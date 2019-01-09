@@ -1,1 +1,37 @@
 /* pages/about/about.wxss */
+.logo-name{
+    padding: 90rpx 0 40rpx;
+    text-align: center;
+}
+.logo{
+    width: 160rpx;
+    height: 160rpx;
+}
+.name{
+    color: #333333;
+    font-size: 38rpx;
+}
+.intro{
+    padding: 28rpx;
+    background-color: #fff;
+}
+.sub-title{
+    color: #333333;
+    font-weight: bold;
+}
+.intro view:not(.sub-title){
+    color: #666666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    text-indent: 2em;
+    margin: 20rpx 0;
+}
+.contact{
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20rpx;
+    padding: 25rpx 30rpx;
+    color: #333;
+    font-weight: bold;
+}

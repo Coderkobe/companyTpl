@@ -1,11 +1,14 @@
-// pages/activity/activity.js
+// pages/actdetail/actdetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    actImage: '/images/act_detail_example.png',
+    actName: '社区送温暖活动',
+    actDate: '2018.10.01~2018.10.05',
+    actAddress: '万科金域东郡'
   },
 
   /**

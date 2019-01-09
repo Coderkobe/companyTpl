@@ -1,0 +1,25 @@
+<!--pages/actdetail/actdetail.wxml-->
+<view class="act-detail" hover-class="none" hover-stop-propagation="false">
+    <view class="header" hover-class="none" hover-stop-propagation="false">
+        <view class="img-box" hover-class="none" hover-stop-propagation="false">
+            <image class="act-image" src="{{actImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                
+            </image>
+        </view>
+        <view class="desc" hover-class="none" hover-stop-propagation="false">
+            <view class="name" hover-class="none" hover-stop-propagation="false">
+                {{actName}}
+            </view>
+            <view wx:if="{{actDate}}" class="date" hover-class="none" hover-stop-propagation="false">
+                时间：{{actDate}}
+            </view>
+            <view wx:if="{{actAddress}}" class="address" hover-class="none" hover-stop-propagation="false">
+                地点：{{actAddress}}
+            </view>
+        </view>
+    </view>
+    <view class="content" hover-class="none" hover-stop-propagation="false">
+        
+    </view>
+</view>
+

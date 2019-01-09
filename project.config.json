@@ -33,36 +33,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 10,
+			"current": 8,
 			"list": [
-				{
-					"id": -1,
-					"name": "个人中心",
-					"pathName": "pages/personal/personal",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "注册",
-					"pathName": "pages/register/register",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "捐助",
-					"pathName": "pages/donation/donation",
-					"query": ""
-				},
 				{
 					"id": -1,
 					"name": "志愿活动",
 					"pathName": "pages/activity/activity",
-					"query": ""
-				},
-				{
-					"id": -1,
-					"name": "编辑信息",
-					"pathName": "pages/editperson/editperson",
 					"query": ""
 				},
 				{
@@ -98,7 +74,20 @@
 				{
 					"id": -1,
 					"name": "企业动态",
-					"pathName": "pages/news/news"
+					"pathName": "pages/news/news",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "企业新闻",
+					"pathName": "pages/newsdetail/newsdetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "关于我们",
+					"pathName": "pages/about/about",
+					"query": ""
 				}
 			]
 		}

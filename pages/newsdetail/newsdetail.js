@@ -1,11 +1,12 @@
-// pages/activity/activity.js
+// pages/newdetail/newsdetail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    newsTitle: '树熊校园微信小程序上线啦！',
+    newsDate: '2018.11.10'
   },
 
   /**
