@@ -1,40 +1,15 @@
 // pages/news/news.js
+const util = require('../../utils/util.js')
+const app = getApp()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    newsList: [
-      {
-        type: 'activity',
-        title: '社区送温暖活动',
-        image: '/images/act_example.png'
-      },
-      {
-        type: 'news',
-        title: '树熊校园微信小程序上线啦！树熊校园微信小程序上线啦！',
-        date: '2018.12.11',
-        image: '/images/news_example.png'
-      },
-      {
-        type: 'news',
-        title: '参上 扩展互联网人脉资源',
-        date: '2018.12.11',
-        image: '/images/new_example_1.png'
-      },
-      {
-        type: 'activity',
-        title: '社区送温暖活动',
-        image: '/images/act_example.png'
-      },
-      {
-        type: 'news',
-        title: '纯山教育基金会 每个人的心里都应该开除一朵花',
-        date: '2019.01.06',
-        image: '/images/new_example_1.png'
-      },
-    ]
+    newsList: [],
+    imghost: util.imghost
   },
 
   /**
@@ -55,7 +30,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.fetchNewsList();
   },
 
   /**
@@ -91,5 +66,43 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  fetchNewsList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/feed`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let newsList  = res.data.data.data;
+        newsList.forEach(element => {
+          if (element['feedable_type'].indexOf('Activity') != -1) {
+            element.type = 'activity';
+          } else {
+            element.type = 'news';
+          }
+          element.date = element['created_at'].split(' ')[0];
+        });
+        _self.setData({
+          newsList: newsList
+        })
+        console.log(_self.data.newsList);
+      },
+      fail: (res) => {
+
+      }
+    })
+  },
+  navigateToNewsDetail: function(e) {
+    let newsId = e.currentTarget.dataset.newsid;
+    wx.navigateTo({
+      url: '/pages/newsdetail/newsdetail?newsid=' + newsId,
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   }
 })

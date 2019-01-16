@@ -1,4 +1,7 @@
 // pages/newdetail/newsdetail.js
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 Page({
 
   /**
@@ -13,7 +16,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      newsId: options.newsid
+    })
   },
 
   /**
@@ -27,7 +33,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.fetchNewsDetail();
   },
 
   /**
@@ -63,5 +69,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  fetchNewsDetail: function() {
+    let _self = this;
+    let newsId = _self.data.newsId;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/article/${newsId}`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        _self.setData({
+          newsTitle: res.data.data.title
+        })
+        let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })

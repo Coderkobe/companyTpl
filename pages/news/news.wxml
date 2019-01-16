@@ -4,24 +4,24 @@
         <!-- 如果是活动展示活动 -->
         <view wx:if="{{item.type == 'activity'}}" class="act-item" hover-class="none" hover-stop-propagation="false">
             <view class="act-title" hover-class="none" hover-stop-propagation="false">
-                {{item.title}}
+                {{item.feedable.title}}
             </view>
-            <image class="act-img" src="{{item.image}}" mode="aspectFill" lazy-load="false" binderror="" bindload="">
+            <image class="act-img" src="{{imghost}}{{item.feedable.cover}}" mode="aspectFill" lazy-load="false" binderror="" bindload="">
 
             </image>
         </view>
         <!-- 如果是新闻展示新闻 -->
-        <view wx:if="{{item.type == 'news'}}" class="news-item" hover-class="none" hover-stop-propagation="false">
+        <view wx:else class="news-item" hover-class="none" hover-stop-propagation="false" data-newsid="{{item.feedable.id}}" bindtap="navigateToNewsDetail">
             <view class="title-date" hover-class="none" hover-stop-propagation="false">
                 <view class="news-title" hover-class="none" hover-stop-propagation="false">
-                    {{item.title}}
+                    {{item.feedable.title}}
                 </view>
                 <view class="news-date" hover-class="none" hover-stop-propagation="false">
                     发布时间：{{item.date}}
                 </view>
             </view>
             <view class="news-image" hover-class="none" hover-stop-propagation="false">
-                <image class="" src="{{item.image}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                <image class="" src="{{imghost}}{{item.feedable.cover}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                     
                 </image>
             </view>

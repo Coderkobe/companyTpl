@@ -1,4 +1,5 @@
 <!--pages/newdetail/newsdetail.wxml-->
+<import src="./../../wxParse/wxParse.wxml" />
 <view class="news-detail" hover-class="none" hover-stop-propagation="false">
     <view class="header" hover-class="none" hover-stop-propagation="false">
         <view class="title" hover-class="none" hover-stop-propagation="false">
@@ -9,6 +10,6 @@
         </view>
     </view>
     <view class="content" hover-class="none" hover-stop-propagation="false">
-        
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </view>
 </view>
