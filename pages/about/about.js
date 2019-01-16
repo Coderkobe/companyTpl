@@ -26,7 +26,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let _self = this;
+    _self.fetchCompanyInfo();
   },
 
   /**
@@ -67,6 +68,30 @@ Page({
   call: function(e) {
     wx.makePhoneCall({
       phoneNumber: e.target.dataset.phone // 仅为示例，并非真实的电话号码
+    })
+  },
+
+  fetchCompanyInfo: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/app`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        // _self.setData({
+        //   coverPicture: res.data.data.cover,
+        //   articleTitle: res.data.data.title
+        // })
+        // let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        // if (article != undefined) {
+        //   _self.setData({
+        //     content: article
+        //   })
+        // }
+      },
+      fail: (res) => {
+
+      }
     })
   }
 })

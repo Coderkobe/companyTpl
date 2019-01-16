@@ -1,4 +1,8 @@
 /* pages/servicedetail/servicedetail.wxss */
+page{
+    min-height: 100%;
+    background-color: #fff;
+}
 .header{
     position: relative;
     height: 258rpx;
@@ -31,4 +35,13 @@
     align-items:center;
     justify-content:center;
     font-size: 40rpx;
+}
+.content{
+    padding: 20rpx 55rpx 20rpx 20rpx;
+    background-color: #fff;
+}
+.wxParse-p{
+    color: #666666 !important;
+    line-height: 35rpx !important;
+    margin: 20rpx 0 !important;
 }

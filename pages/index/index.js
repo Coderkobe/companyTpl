@@ -44,16 +44,7 @@ Page({
       }
     ],
     serviceList: [
-      {
-        "id": 0,
-        "title": "软件定制及产品方案服务 灌篮高手两个花露水",
-        "imgSrc": "/images/index_service_1.png"
-      },
-      {
-        "id": 1,
-        "title": "视觉设计",
-        "imgSrc": "/images/index_service_2.png"
-      }
+
     ],
     caseList: [
       {
@@ -77,9 +68,8 @@ Page({
       // wx.hideTabBar({});
       // _self.showPopup();
     }
-
-    this.fetchProList();
-    this.fetchDonationList();
+    this.fetctServiceList();
+    this.fetchCaseList();
   },
   getUserInfo: function(e) {
     let _self = this;
@@ -199,6 +189,43 @@ Page({
           newsList: newsList
         })
         console.log(newsList);
+      },
+      fail: (res) => {
+
+      }
+    })
+  },
+
+  // 获取主营业务
+  fetctServiceList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/business`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let serviceList  = res.data.data;
+        _self.setData({
+          serviceList: serviceList
+        })
+      },
+      fail: (res) => {
+
+      }
+    })
+  },
+
+  fetchCaseList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/product`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let serviceList  = res.data.data;
+        _self.setData({
+          serviceList: serviceList
+        })
       },
       fail: (res) => {
 

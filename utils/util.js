@@ -1,5 +1,6 @@
-const hostname = 'https://xcx-chunshan.kejishuihua.com';
-// const hostname = 'https://a9d98889.ngrok.io';
+// const hostname = 'https://xcx-chunshan.kejishuihua.com';
+const hostname = 'http://bf1be75d.ap.ngrok.io';
+const appId = 'f3dc2429-1ed0-4fd4-99aa-0cb1dc7bb872';
 const imghost = 'https://xcx-chunshan.kejishuihua.com/storage/';
 const verifyId = require('./verifyId.js');
 
@@ -151,34 +152,6 @@ const getUserInfo = (a, callback) => {
 
      }
   })
-
-  // if (!wx.getStorageSync('ch_isLogin')) {
-  //   wx.getUserInfo({
-  //     success: function(res) {
-  //       request({
-  //         url: `${hostname}/api/authenticate`,
-  //         data: {
-  //           sk: a,
-  //           iv: res.iv,
-  //           encryptedData: res.encryptedData
-  //         },
-  //         success: (res) => {
-  //           if (res.data.data.token) {
-  //             wx.setStorageSync('ch_token', res.data.data.token['access_token']);
-  //             wx.setStorageSync('ch_user', res.data.data.user);
-  //             wx.setStorageSync('ch_isLogin', true);
-  //           } else {
-  //             console.log('authenticate server error');
-  //           }
-  //           callback && callback();
-  //         },
-  //         fail: (res) => {
-
-  //         }
-  //       })
-  //     }
-  //   })
-  // }
 };
 
 let verifyMobile = function(val) {
@@ -193,5 +166,6 @@ module.exports = {
   permissionRequest: permissionRequest,
   imghost: imghost,
   verifyId: verifyId.verifyId,
-  verifyMobile: verifyMobile
+  verifyMobile: verifyMobile,
+  app_id: appId
 }

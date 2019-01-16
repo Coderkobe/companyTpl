@@ -1,3 +1,6 @@
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 // pages/casedetail/casedetail.js
 Page({
 
@@ -5,14 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    imgUrls: [
+      '/images/pdetail.png',
+      '/images/pdetail.png'
+    ],
+    productName: '小程序：参上名片',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options);
+    this.setData({
+      caseId: options.caseid
+    })
   },
 
   /**
@@ -26,7 +36,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    let _self = this;
+    _self.fetchCaseDetail();
   },
 
   /**
@@ -62,5 +73,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  fetchCaseDetail: function() {
+    let _self = this;
+    let caseId = _self.data.caseId;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/product/${caseId}`,
+      method: 'get',
+      success: (res) => {
+        _self.setData({
+          coverPicture: res.data.data.cover,
+          articleTitle: res.data.data.title
+        })
+        let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })

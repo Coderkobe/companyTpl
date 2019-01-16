@@ -33,7 +33,7 @@
   </view>
   <view class="service-item-container">
     <view class="service-item" wx:for="{{serviceList}}" wx:key="{{index}}">
-      <serviceitem img-src="{{item.imgSrc}}" 
+      <serviceitem img-src="{{item.cover}}" 
             si-title="{{item.title}}" 
             service-id="{{item.id}}">
       </serviceitem>

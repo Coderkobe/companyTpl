@@ -1,3 +1,6 @@
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 // pages/servicedetail/servicedetail.js
 Page({
 
@@ -14,6 +17,9 @@ Page({
    */
   onLoad: function (options) {
     console.log(options);
+    this.setData({
+      serviceId: options.serviceid
+    })
   },
 
   /**
@@ -27,7 +33,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    let _self = this;
 
+    _self.fetchServiceDetail();
   },
 
   /**
@@ -63,5 +71,29 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  fetchServiceDetail: function() {
+    let _self = this;
+    let serviceId = _self.data.serviceId;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/business/${serviceId}`,
+      method: 'get',
+      success: (res) => {
+        _self.setData({
+          coverPicture: res.data.data.cover,
+          articleTitle: res.data.data.title
+        })
+        let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })
