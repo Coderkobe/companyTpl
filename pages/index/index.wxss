@@ -6,7 +6,7 @@
   width: 100%;
   height: 360rpx;
 }
-.banner image{
+.banner swiper, .banner image{
   width: 100%;
   height: 100%;
 }

@@ -1,7 +1,7 @@
 // const hostname = 'https://xcx-chunshan.kejishuihua.com';
-const hostname = 'http://bf1be75d.ap.ngrok.io';
+const hostname = 'http://d53b4f0e.ap.ngrok.io';
 const appId = 'f3dc2429-1ed0-4fd4-99aa-0cb1dc7bb872';
-const imghost = 'https://xcx-chunshan.kejishuihua.com/storage/';
+const imghost = 'http://d53b4f0e.ap.ngrok.io/';
 const verifyId = require('./verifyId.js');
 
 const formatTime = date => {

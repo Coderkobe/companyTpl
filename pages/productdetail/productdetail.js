@@ -1,10 +1,14 @@
 // pages/productdetail/productdetail.js
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imghost: util.imghost,
     imgUrls: [
       '/images/pdetail.png',
       '/images/pdetail.png'
@@ -17,7 +21,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      productId: options.productid
+    })
   },
 
   /**
@@ -31,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.fetchProductDetail();
   },
 
   /**
@@ -67,5 +73,30 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  fetchProductDetail: function() {
+    let _self = this;
+    let productId = _self.data.productId;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/product/${productId}`,
+      method: 'get',
+      success: (res) => {
+        _self.setData({
+          imgUrls: [`${res.data.data.cover}`],
+          productName: res.data.data.title,
+          productDetail: res.data.data.price
+        })
+        let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })

@@ -79,7 +79,7 @@ Page({
     let _self = this;
     let caseId = _self.data.caseId;
     util.request({
-      url: `${util.hostname}/api/${util.app_id}/product/${caseId}`,
+      url: `${util.hostname}/api/${util.app_id}/project/${caseId}`,
       method: 'get',
       success: (res) => {
         _self.setData({

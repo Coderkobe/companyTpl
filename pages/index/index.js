@@ -5,6 +5,10 @@ const app = getApp()
 
 Page({
   data: {
+    indicatorDots: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 1000,
     navbarData: {
       backgroundColor: '#fff'
     },
@@ -47,12 +51,9 @@ Page({
 
     ],
     caseList: [
-      {
-        "id": 0,
-        "title": "纯山教育基金会",
-        "imgSrc": "/images/index_case.png"
-      }
-    ]
+      
+    ],
+    slideImages: []
   },
   
   onLoad: function () {
@@ -70,6 +71,8 @@ Page({
     }
     this.fetctServiceList();
     this.fetchCaseList();
+    this.fetchNewsList();
+    this.fetchSlideList();
   },
   getUserInfo: function(e) {
     let _self = this;
@@ -218,13 +221,47 @@ Page({
   fetchCaseList: function() {
     let _self = this;
     util.request({
-      url: `${util.hostname}/api/${util.app_id}/product`,
+      url: `${util.hostname}/api/${util.app_id}/project`,
       method: 'get',
       success: (res) => {
         console.log(res);
-        let serviceList  = res.data.data;
+        let caseList  = res.data.data;
         _self.setData({
-          serviceList: serviceList
+          caseList: caseList
+        })
+      },
+      fail: (res) => {
+
+      }
+    })
+  },
+  fetchNewsList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/article`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let newsList  = res.data.data;
+        _self.setData({
+          newsList: newsList
+        })
+      },
+      fail: (res) => {
+
+      }
+    })
+  },
+  fetchSlideList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/slide`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let slideImages  = res.data.data;
+        _self.setData({
+          slideImages: slideImages
         })
       },
       fail: (res) => {

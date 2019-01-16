@@ -1,13 +1,13 @@
 <!--pages/productdetail/productdetail.wxml-->
+<import src="./../../wxParse/wxParse.wxml" />
 <view class="product-detail" hover-class="none" hover-stop-propagation="false">
     <view class="header" hover-class="none" hover-stop-propagation="false">
         <view class="img-box" hover-class="none" hover-stop-propagation="false">
-            <swiper   indicator-dots="true" 
-                indicator-active-color="#fff">
+            <swiper>
                 <block wx:for="{{imgUrls}}" wx:key="{{index}}">
                     <swiper-item>
                         <!-- width="325" height="174" -->
-                        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+                        <image src="{{imghost}}{{item}}" class="slide-image" mode="aspectFill"/>
                     </swiper-item>
                 </block>
             </swiper>
@@ -22,6 +22,6 @@
         </view>
     </view>
     <view class="content" hover-class="none" hover-stop-propagation="false">
-        
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </view>
 </view>

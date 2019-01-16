@@ -11,6 +11,9 @@ Component({
     },
     caseId: {
       type: String
+    },
+    isProduct: {
+      type: Boolean
     }
   },
   data: {
@@ -20,9 +23,16 @@ Component({
     // 这里是一个自定义方法
     navigateToActDetail: function (e) {
       let caseId = e.currentTarget.dataset.caseid;
-      wx.navigateTo({
-        url: `/pages/casedetail/casedetail?caseid=${caseId}`
-      })
+      let isProduct = e.currentTarget.dataset.isproduct;
+      if (isProduct) {
+        wx.navigateTo({
+          url: `/pages/productdetail/productdetail?productid=${caseId}`
+        })
+      } else {
+        wx.navigateTo({
+          url: `/pages/casedetail/casedetail?caseid=${caseId}`
+        })
+      }
     }
   }
 });

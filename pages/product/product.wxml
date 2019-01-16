@@ -1,38 +1,15 @@
 <!--pages/activity.wxml-->
-<!-- 仅管理员可看到该入口 -->
-<!-- <navigator url="/pages/activitydetail/activitydetail?activityId=111">活动详情</navigator> -->
-<view class="activity" wx:if="{{caseList.length > 0}}">
-    <view wx:for="{{caseList}}" wx:key="{{item}}">
+<view class="activity" wx:if="{{productList.length > 0}}">
+    <view wx:for="{{productList}}" wx:key="{{item}}">
         <view class="case-item">
-            <caseitem img-src="{{item.imgSrc}}" 
+            <caseitem img-src="{{imghost}}{{item.cover}}" 
                 ci-title="{{item.title}}" 
-                case-id="{{item.id}}">
+                case-id="{{item.id}}"
+                is-product="true">
             </caseitem>
         </view>
-        <!-- <view class="act-item" wx:if="{{item.same}}">
-            <actitem img-src="{{imghost}}{{item.cover}}" 
-                ai-title="{{item.title}}" 
-                ai-intro="{{item.startTime}}" 
-                act-id="{{item.id}}"
-                ai-ing="{{item.status == 1 ? true : false}}">
-            </actitem>
-        </view>
-        <view class="act-item" wx:if="{{!item.same}}">
-            <actitem img-src="{{imghost}}{{item.cover}}" 
-                ai-title="{{item.title}}" 
-                ai-intro="{{item.startTime}}——{{item.endTime}}" 
-                act-id="{{item.id}}"
-                ai-ing="{{item.status == 1 ? true : false}}">
-            </actitem>
-        </view> -->
     </view>
 </view>
-<!-- <view wx:if="{{noActList}}">
-    <wxc-abnor type="DATA"></wxc-abnor>
-</view>
-<view class="footer">
-    <wxc-loadmore is-end="{{true}}" text="我们认为每个生命都有权利被尊重\n我们相信每个人的心中都有一座爱与善的花园" icon="false"></wxc-loadmore>
-</view> -->
 <wxc-toast
     is-show="{{$toast.show}}"
     icon="{{$toast.icon}}"

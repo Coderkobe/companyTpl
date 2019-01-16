@@ -1,15 +1,17 @@
 <!--pages/about/about.wxml-->
+<import src="./../../wxParse/wxParse.wxml" />
 <view class="about" hover-class="none" hover-stop-propagation="false">
     <view class="logo-name" hover-class="none" hover-stop-propagation="false">
         <image class="logo" src="{{logo}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
             
         </image>
         <view class="name" hover-class="none" hover-stop-propagation="false">
-            水花科技
+            {{companyName}}
         </view>
     </view>
     <view class="intro" hover-class="none" hover-stop-propagation="false">
-        <view class="sub-title" hover-class="none" hover-stop-propagation="false">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        <!-- <view class="sub-title" hover-class="none" hover-stop-propagation="false">
             公司简介
         </view>
         <view class="" hover-class="none" hover-stop-propagation="false">
@@ -23,14 +25,14 @@
         </view>
         <view class="" hover-class="none" hover-stop-propagation="false">
             根据您的需求，为你定制各类微信小程序，快速、稳定、高效的实现您的业务需求；
-        </view>
+        </view> -->
     </view>
     <view class="contact" hover-class="none" hover-stop-propagation="false">
         <view class="" hover-class="none" hover-stop-propagation="false">
             联系电话
         </view>
-        <view class="" hover-class="none" hover-stop-propagation="false" data-phone="029-81014150" bindtap="call">
-            029-81014150
+        <view class="" hover-class="none" hover-stop-propagation="false" data-phone="{{companyPhone}}" bindtap="call">
+            {{companyPhone}}
         </view>
     </view>
 </view>

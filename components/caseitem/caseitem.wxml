@@ -5,7 +5,7 @@
             <image mode="aspectFill" src="{{imgSrc}}"></image>
         </view>
         <view class="img-mask"></view>
-        <view class="desc" bindtap="navigateToActDetail" data-caseid="{{caseId}}">
+        <view class="desc" bindtap="navigateToActDetail" data-caseid="{{caseId}}" data-isproduct="{{isProduct}}">
             <view class="title">{{ciTitle}}</view>
         </view>
     </view> 

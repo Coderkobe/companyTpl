@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imghost: util.imghost,
     coverPicture: '/images/index_service_1.png',
     articleTitle: '软件定制及产品方案服务'
   },

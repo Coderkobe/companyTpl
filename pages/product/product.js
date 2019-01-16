@@ -14,23 +14,8 @@ Page({
     actList: [],
     imghost: util.imghost,
     noActList: false,
-    caseList: [
-      {
-        "title": "参上名片",
-        "imgSrc": "/images/card.png"
-      },
-      {
-        "title": "纯山教育基金会",
-        "imgSrc": "/images/chunshan.png"
-      },
-      {
-        "title": "树熊校园",
-        "imgSrc": "/images/bear.png"
-      },
-      {
-        "title": "新年礼物活动",
-        "imgSrc": "/images/h5.png"
-      },
+    productList: [
+      
     ]
   },
 
@@ -52,7 +37,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.fetchActList();
+    this.fetchProductList();
   },
 
   /**
@@ -148,5 +133,21 @@ Page({
         }
       })
     }, 2500)
+  },
+  fetchProductList: function() {
+    let _self = this;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/product`,
+      method: 'get',
+      success: (res) => {
+        let productList  = res.data.data;
+        _self.setData({
+          productList: productList
+        })
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })

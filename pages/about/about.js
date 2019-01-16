@@ -1,4 +1,7 @@
 // pages/about/about.js
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 Page({
 
   /**
@@ -6,6 +9,8 @@ Page({
    */
   data: {
     logo: '/images/logo.png',
+    companyName: '',
+    companyPhone: ''
   },
 
   /**
@@ -78,16 +83,16 @@ Page({
       method: 'get',
       success: (res) => {
         console.log(res);
-        // _self.setData({
-        //   coverPicture: res.data.data.cover,
-        //   articleTitle: res.data.data.title
-        // })
-        // let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
-        // if (article != undefined) {
-        //   _self.setData({
-        //     content: article
-        //   })
-        // }
+        _self.setData({
+          companyName: res.data.data.name,
+          companyPhone: res.data.data.tel
+        })
+        let article = WxParse.wxParse('content', 'html', res.data.data.intro, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
       },
       fail: (res) => {
 

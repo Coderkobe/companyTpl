@@ -2,7 +2,7 @@
 <import src="./../../wxParse/wxParse.wxml" />
 <view class="service-detail" hover-class="none" hover-stop-propagation="false">
     <view class="header" hover-class="none" hover-stop-propagation="false">
-        <image class="cover-picture" src="{{coverPicture}}"></image>
+        <image class="cover-picture" src="{{imghost}}{{coverPicture}}"></image>
         <view class="mask"></view>
         <view class="article-title">{{articleTitle}}</view>
     </view>

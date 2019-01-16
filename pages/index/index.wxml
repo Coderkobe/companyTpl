@@ -2,7 +2,20 @@
 <view class="index">
   <!-- 首页banner -->
   <view class="banner">
-    <image src="{{banner}}" mode="aspectFit"/>
+    <!-- <image src="{{banner}}" mode="aspectFit"/> -->
+    <swiper indicator-dots="{{indicatorDots}}"
+            autoplay="{{autoplay}}" 
+            interval="{{interval}}" 
+            duration="{{duration}}" 
+            indicator-dots="true" 
+            indicator-active-color="#fff">
+        <block wx:for="{{slideImages}}" wx:key="{{index}}">
+            <swiper-item>
+                <!-- width="325" height="174" -->
+                <image src="{{imghost}}{{item['img_path']}}" class="slide-image" mode="aspectFill"/>
+            </swiper-item>
+        </block>
+    </swiper>
   </view>
   <!-- 公司新闻 -->
   <view class="news">
@@ -33,7 +46,7 @@
   </view>
   <view class="service-item-container">
     <view class="service-item" wx:for="{{serviceList}}" wx:key="{{index}}">
-      <serviceitem img-src="{{item.cover}}" 
+      <serviceitem img-src="{{imghost}}{{item.cover}}" 
             si-title="{{item.title}}" 
             service-id="{{item.id}}">
       </serviceitem>
@@ -45,7 +58,7 @@
   </view>
   <view class="case-item-container">
     <view class="case-item" wx:for="{{caseList}}" wx:key="{{index}}">
-      <caseitem img-src="{{item.imgSrc}}" 
+      <caseitem img-src="{{imghost}}{{item.cover}}" 
             ci-title="{{item.title}}" 
             case-id="{{item.id}}">
       </caseitem>
