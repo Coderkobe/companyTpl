@@ -29,3 +29,17 @@
 .date{
     margin-bottom: 10rpx;
 }
+.content{
+    color: #666666;
+    font-size: 28rpx;
+    line-height: 35rpx;
+    background-color: #fff;
+    padding: 0 30rpx;
+}
+.wxParse-h2{
+    margin: 0 !important;
+}
+.wxParse-p{
+    padding: 10rpx 0;
+    margin-bottom: 0 !important;
+}

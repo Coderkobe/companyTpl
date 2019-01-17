@@ -1,8 +1,9 @@
 <!--pages/actdetail/actdetail.wxml-->
+<import src="./../../wxParse/wxParse.wxml" />
 <view class="act-detail" hover-class="none" hover-stop-propagation="false">
     <view class="header" hover-class="none" hover-stop-propagation="false">
         <view class="img-box" hover-class="none" hover-stop-propagation="false">
-            <image class="act-image" src="{{actImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            <image class="act-image" src="{{imghost}}/{{actImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                 
             </image>
         </view>
@@ -19,7 +20,7 @@
         </view>
     </view>
     <view class="content" hover-class="none" hover-stop-propagation="false">
-        
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
     </view>
 </view>
 

@@ -2,11 +2,11 @@
 <view class="news" hover-class="none" hover-stop-propagation="false">
     <view class="" wx:for="{{newsList}}" wx:key="{{index}}">
         <!-- 如果是活动展示活动 -->
-        <view wx:if="{{item.type == 'activity'}}" class="act-item" hover-class="none" hover-stop-propagation="false">
+        <view wx:if="{{item.type == 'activity'}}" class="act-item" data-activityid="{{item.feedable.id}}" bindtap="navigateToActivityDetail" hover-class="none" hover-stop-propagation="false">
             <view class="act-title" hover-class="none" hover-stop-propagation="false">
                 {{item.feedable.title}}
             </view>
-            <image class="act-img" src="{{imghost}}{{item.feedable.cover}}" mode="aspectFill" lazy-load="false" binderror="" bindload="">
+            <image class="act-img" src="{{imghost}}/{{item.feedable.cover}}" mode="aspectFill" lazy-load="false" binderror="" bindload="">
 
             </image>
         </view>
@@ -21,7 +21,7 @@
                 </view>
             </view>
             <view class="news-image" hover-class="none" hover-stop-propagation="false">
-                <image class="" src="{{imghost}}{{item.feedable.cover}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+                <image class="" src="{{imghost}}/{{item.feedable.cover}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                     
                 </image>
             </view>

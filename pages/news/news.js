@@ -104,5 +104,16 @@ Page({
       fail: ()=>{},
       complete: ()=>{}
     });
+  },
+  navigateToActivityDetail: function(e) {
+    let activityId = e.currentTarget.dataset.activityid;
+    wx.navigateTo({
+      url: '/pages/actdetail/actdetail?activityid=' + activityId,
+      success: (result)=>{
+        
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   }
 })

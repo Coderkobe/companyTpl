@@ -1,21 +1,27 @@
 // pages/actdetail/actdetail.js
+const util = require('../../utils/util.js')
+const WxParse = require('../../wxParse/wxParse.js');
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    imghost: util.imghost,
     actImage: '/images/act_detail_example.png',
     actName: '社区送温暖活动',
     actDate: '2018.10.01~2018.10.05',
-    actAddress: '万科金域东郡'
+    actAddress: ''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      activityId: options.activityid
+    })
   },
 
   /**
@@ -29,7 +35,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.fetchActivityDetail();
   },
 
   /**
@@ -65,5 +71,32 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  fetchActivityDetail: function() {
+    let _self = this;
+    let activityId = _self.data.activityId;
+    util.request({
+      url: `${util.hostname}/api/${util.app_id}/activity/${activityId}`,
+      method: 'get',
+      success: (res) => {
+        console.log(res);
+        let actDate = res.data.data['start_time'].split(' ')[0] + '~' + res.data.data['end_time'].split(' ')[0];
+        _self.setData({
+          actImage: res.data.data.cover,
+          actName: res.data.data.title,
+          actDate: actDate
+        })
+         
+        let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
+        if (article != undefined) {
+          _self.setData({
+            content: article
+          })
+        }
+      },
+      fail: (res) => {
+
+      }
+    })
   }
 })
