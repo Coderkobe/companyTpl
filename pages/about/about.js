@@ -82,7 +82,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/app`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         _self.setData({
           companyName: res.data.data.name,
           companyPhone: res.data.data.tel

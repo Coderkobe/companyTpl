@@ -1,7 +1,7 @@
 // const hostname = 'https://xcx-chunshan.kejishuihua.com';
 const hostname = 'http://c220b427.ap.ngrok.io';
 const appId = 'f3dc2429-1ed0-4fd4-99aa-0cb1dc7bb872';
-const imghost = 'http://c220b427.ap.ngrok.io';
+const imghost = 'http://c220b427.ap.ngrok.io/';
 const verifyId = require('./verifyId.js');
 
 const formatTime = date => {
@@ -107,7 +107,6 @@ const login = (callback) => {
 const getUserInfo = (a, callback) => {
   wx.getSetting({
     success: res => {
-      console.log(res)
       if (res.authSetting['scope.userInfo']) {
         wx.showLoading({
           title: '登录中...',

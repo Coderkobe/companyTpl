@@ -78,7 +78,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/article/${newsId}`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         _self.setData({
           newsTitle: res.data.data.title
         })

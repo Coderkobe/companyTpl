@@ -74,7 +74,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/feed`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let newsList  = res.data.data.data;
         newsList.forEach(element => {
           if (element['feedable_type'].indexOf('Activity') != -1) {

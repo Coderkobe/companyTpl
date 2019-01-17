@@ -206,7 +206,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/business`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let serviceList  = res.data.data;
         _self.setData({
           serviceList: serviceList
@@ -224,7 +223,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/project`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let caseList  = res.data.data;
         _self.setData({
           caseList: caseList
@@ -241,7 +239,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/article`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let newsList  = res.data.data;
         _self.setData({
           newsList: newsList
@@ -258,7 +255,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/slide`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let slideImages  = res.data.data;
         _self.setData({
           slideImages: slideImages

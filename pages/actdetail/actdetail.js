@@ -79,7 +79,6 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/activity/${activityId}`,
       method: 'get',
       success: (res) => {
-        console.log(res);
         let actDate = res.data.data['start_time'].split(' ')[0] + '~' + res.data.data['end_time'].split(' ')[0];
         _self.setData({
           actImage: res.data.data.cover,
