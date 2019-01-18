@@ -1,5 +1,4 @@
 //index.js
-//获取应用实例
 const util = require('../../utils/util.js')
 const app = getApp()
 
@@ -9,9 +8,6 @@ Page({
     autoplay: true,
     interval: 2000,
     duration: 1000,
-    navbarData: {
-      backgroundColor: '#fff'
-    },
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
@@ -22,13 +18,6 @@ Page({
     },
     imghost: util.imghost,
     hidden: true,
-    proList: [],
-    indicatorDots: false,
-    logoImg: 'https://xcx-chunshan.kejishuihua.com/storage/images/011628745373cbc108e650c8ed46151f.png',
-    qrcodeImg: 'https://xcx-chunshan.kejishuihua.com/storage/images/5a79ce3caffce3d79636341536a70341.png',
-    zhengshuImg: 'https://xcx-chunshan.kejishuihua.com/storage/images/ef3316a5c7d1598337a9d98e4deca832.png',
-    zhengshu1Img: 'https://xcx-chunshan.kejishuihua.com/storage/images/4a211c285f1ce44538942b87be752c66.png',
-    banner: '/images/index_banner.png',
     newsList: [
       {
         "title": "西安水花科技官方微信小程序上线了",
@@ -60,15 +49,6 @@ Page({
     
   },
   onShow: function() {
-    let _self = this;
-    console.log(`-----------`);
-    console.log(wx.canIUse('getSetting'));
-    if (wx.getStorageSync('ch_isLogin')) {
-
-    } else {
-      // wx.hideTabBar({});
-      // _self.showPopup();
-    }
     this.fetctServiceList();
     this.fetchCaseList();
     this.fetchNewsList();
@@ -93,18 +73,6 @@ Page({
       });
     });
   },
-  showDialog() {
-    let dialogComponent = this.selectComponent('.wxc-dialog')
-    dialogComponent && dialogComponent.show();
-  },
-  showPopup() {
-    let popupComponent = this.selectComponent('.J_Popup');
-    popupComponent && popupComponent.show();
-  },
-  hidePopup() {
-    let popupComponent = this.selectComponent('.J_Popup');
-    popupComponent && popupComponent.hide();
-  },
   showToast(text, icon) {
     this.setData({
       $toast: {
@@ -120,16 +88,6 @@ Page({
         }
       })
     }, 1500)
-  },
-  hideDialog() {
-    let dialogComponent = this.selectComponent('.wxc-dialog')
-    dialogComponent && dialogComponent.hide();
-  },
-  onConfirm () {
-    this.hideDialog()
-  },
-  onCancel () {
-    this.hideDialog()
   },
   onGotUserInfo: function(e) {
     console.log(e)
@@ -151,53 +109,6 @@ Page({
       })
     }, 1500)
   },
-  fetchProList: function() {
-    let _self = this;
-    let id = this.data.actId;
-    util.permissionRequest({
-      url: `${util.hostname}/api/project`,
-      data: {},
-      method: 'get',
-      success: (res) => {
-        if (res.statusCode == 200) {
-          this.setData({
-            proList: res.data.data.data
-          })
-        } else {
-          _self.showToast(res.errMsg);
-        }
-      },
-      fail: (res) => {
-        _self.showToast(res.errMsg);
-      }
-    })
-  },
-  fetchDonationList: function() {
-    let _self = this;
-    util.request({
-      url: `${util.hostname}/api/donation/rolling`,
-      method: 'get',
-      success: (res) => {
-        // res.data.data.forEach(element => {
-        //   element.date = element['created_at'].match(/\S*/)[0];
-        // });
-        // _self.setData({
-        //   // donorList: res.data.data
-        // })
-        let newsList = [];
-        for(let i=0,len=_self.data.newsList.length;i<len;i+=2){
-          newsList.push(_self.data.newsList.slice(i,i+2));
-        }
-        _self.setData({
-          newsList: newsList
-        })
-        console.log(newsList);
-      },
-      fail: (res) => {
-
-      }
-    })
-  },
 
   // 获取主营业务
   fetctServiceList: function() {
@@ -217,6 +128,7 @@ Page({
     })
   },
 
+  // 获取合作案例
   fetchCaseList: function() {
     let _self = this;
     util.request({
@@ -233,6 +145,8 @@ Page({
       }
     })
   },
+
+  //获取信息列表 
   fetchNewsList: function() {
     let _self = this;
     util.request({
@@ -249,6 +163,8 @@ Page({
       }
     })
   },
+
+  // 获取首页轮播
   fetchSlideList: function() {
     let _self = this;
     util.request({

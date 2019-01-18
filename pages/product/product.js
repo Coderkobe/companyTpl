@@ -75,49 +75,6 @@ Page({
   
   },
 
-  transferDate: function(str) {
-    let date = (str.match(/\S*/)[0]).split('-');
-    let year = date[0];
-    let month = +date[1];
-    let day = +date[2];
-    return `${year}年${month}月${day}日`;
-  },
-  // 获取活动列表
-  fetchActList: function() {
-    let _self = this;
-    util.permissionRequest({
-      url: `${util.hostname}/api/activity`,
-      data: {},
-      method: 'get',
-      success: (res) => {
-        if (res.statusCode == 200) {
-          res.data.data.data.forEach(element => {
-            element.startTime = _self.transferDate(element['start_time']);
-            element.endTime = _self.transferDate(element['end_time']);
-            element.same = element.startTime === element.endTime ? true : false;
-          });
-          _self.setData({
-            actList: res.data.data.data
-          })
-          // 如果有列表，无数据模块不展示，否则展示无数据模块
-          if (_self.data.actList.length == 0) {
-            this.setData({
-              noActList: true
-            });
-          } else {
-            this.setData({
-              noActList: false
-            });
-          }
-        } else {
-          _self.showToast(res.errMsg);
-        }
-      },
-      fail: (res) => {
-        _self.showToast(res.errMsg);
-      }
-    })
-  },
   showToast: function(text, icon) {
     this.setData({
       $toast: {
@@ -134,6 +91,8 @@ Page({
       })
     }, 2500)
   },
+
+  // 获取产品列表
   fetchProductList: function() {
     let _self = this;
     util.request({

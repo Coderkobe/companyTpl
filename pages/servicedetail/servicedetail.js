@@ -74,6 +74,7 @@ Page({
 
   },
 
+  // 获取业务详情
   fetchServiceDetail: function() {
     let _self = this;
     let serviceId = _self.data.serviceId;

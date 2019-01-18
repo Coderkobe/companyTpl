@@ -71,6 +71,7 @@ Page({
 
   },
 
+  // 获取新闻详情
   fetchNewsDetail: function() {
     let _self = this;
     let newsId = _self.data.newsId;

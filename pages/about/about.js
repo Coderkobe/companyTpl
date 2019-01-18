@@ -76,6 +76,7 @@ Page({
     })
   },
 
+  // 获取公司信息
   fetchCompanyInfo: function() {
     let _self = this;
     util.request({

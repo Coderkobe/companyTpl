@@ -74,7 +74,8 @@ Page({
   onShareAppMessage: function () {
 
   },
-
+  
+  // 获取产品详情
   fetchProductDetail: function() {
     let _self = this;
     let productId = _self.data.productId;

@@ -72,6 +72,8 @@ Page({
   onShareAppMessage: function () {
 
   },
+
+  // 获取活动详情
   fetchActivityDetail: function() {
     let _self = this;
     let activityId = _self.data.activityId;

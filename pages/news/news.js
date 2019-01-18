@@ -68,6 +68,7 @@ Page({
 
   },
 
+  //获取企业动态 
   fetchNewsList: function() {
     let _self = this;
     util.request({
@@ -93,6 +94,8 @@ Page({
       }
     })
   },
+
+  // 跳转至新闻详情
   navigateToNewsDetail: function(e) {
     let newsId = e.currentTarget.dataset.newsid;
     wx.navigateTo({
@@ -104,6 +107,8 @@ Page({
       complete: ()=>{}
     });
   },
+
+  // 跳转至活动详情页面
   navigateToActivityDetail: function(e) {
     let activityId = e.currentTarget.dataset.activityid;
     wx.navigateTo({

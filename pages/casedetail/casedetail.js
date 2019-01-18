@@ -75,6 +75,7 @@ Page({
 
   },
 
+  // 获取案例详情
   fetchCaseDetail: function() {
     let _self = this;
     let caseId = _self.data.caseId;
