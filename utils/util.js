@@ -1,8 +1,8 @@
 // const hostname = 'https://xcx-chunshan.kejishuihua.com';
-const hostname = 'http://26e52a02.ap.ngrok.io';
+const hostname = 'https://xcx.kejishuihua.com';
 const appId = 'f3dc2429-1ed0-4fd4-99aa-0cb1dc7bb872';
-const imghost = 'http://26e52a02.ap.ngrok.io/';
-const verifyId = require('./verifyId.js');
+const imghost = 'https://xcx.kejishuihua.com';
+// const verifyId = require('./verifyId.js');
 
 const formatTime = date => {
   const year = date.getFullYear()
@@ -164,7 +164,7 @@ module.exports = {
   getUserInfo: getUserInfo,
   permissionRequest: permissionRequest,
   imghost: imghost,
-  verifyId: verifyId.verifyId,
+  // verifyId: verifyId.verifyId,
   verifyMobile: verifyMobile,
   app_id: appId
 }

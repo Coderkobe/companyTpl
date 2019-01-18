@@ -3,7 +3,7 @@
 <view class="act-detail" hover-class="none" hover-stop-propagation="false">
     <view class="header" hover-class="none" hover-stop-propagation="false">
         <view class="img-box" hover-class="none" hover-stop-propagation="false">
-            <image class="act-image" src="{{imghost}}/{{actImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
+            <image class="act-image" src="{{imghost}}{{actImage}}" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload="">
                 
             </image>
         </view>
