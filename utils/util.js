@@ -1,6 +1,6 @@
 // const hostname = 'https://xcx-chunshan.kejishuihua.com';
 const hostname = 'https://xcx.kejishuihua.com';
-const appId = 'f3dc2429-1ed0-4fd4-99aa-0cb1dc7bb872';
+const appId = '2c8b3c74-aaf1-4996-9f07-4f07d975082f';
 const imghost = 'https://xcx.kejishuihua.com';
 // const verifyId = require('./verifyId.js');
 
