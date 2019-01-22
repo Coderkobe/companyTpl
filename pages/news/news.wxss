@@ -29,6 +29,7 @@
 .news-title{
     color: #666666;
     font-size: 28rpx;
+    font-weight: bold;
     max-height: 70rpx;
     margin-bottom: 15rpx;
 }

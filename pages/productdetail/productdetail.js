@@ -10,8 +10,7 @@ Page({
   data: {
     imghost: util.imghost,
     imgUrls: [
-      '/images/pdetail.png',
-      '/images/pdetail.png'
+      
     ],
     productName: '小程序：参上名片',
     productDetail: '￥999'

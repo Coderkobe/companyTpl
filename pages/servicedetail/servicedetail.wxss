@@ -40,8 +40,16 @@ page{
     padding: 20rpx 55rpx 20rpx 20rpx;
     background-color: #fff;
 }
+.MsoListParagraph{
+    display: flex !important;
+}
 .wxParse-p{
     color: #666666 !important;
     line-height: 35rpx !important;
     margin: 20rpx 0 !important;
+    text-indent: 0 !important;
+}
+.wxParse-inline{
+    line-height: 50rpx !important;
+    display: inline !important;
 }

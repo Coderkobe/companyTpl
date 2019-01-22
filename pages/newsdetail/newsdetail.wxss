@@ -9,6 +9,7 @@
 .title{
     color: #666;
     font-size: 28rpx;
+    font-weight: bold;
     margin-bottom: 20rpx;
 }
 .date{
@@ -16,11 +17,12 @@
     font-size: 20rpx;
 }
 .content{
+    margin-top: 10rpx;
     color: #666666;
     font-size: 28rpx;
     line-height: 35rpx;
     background-color: #fff;
-    padding: 0 30rpx;
+    padding: 0 50rpx 10rpx 30rpx;
 }
 .wxParse-h2{
     margin: 0 !important;
@@ -28,4 +30,8 @@
 .wxParse-p{
     padding: 10rpx 0;
     margin-bottom: 0 !important;
+}
+.wxParse-inline{
+    line-height: 35rpx !important;
+    display: inline !important;
 }

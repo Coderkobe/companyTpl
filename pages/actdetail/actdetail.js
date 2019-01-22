@@ -9,7 +9,7 @@ Page({
    */
   data: {
     imghost: util.imghost,
-    actImage: '/images/act_detail_example.png',
+    actImage: '',
     actName: '社区送温暖活动',
     actDate: '2018.10.01~2018.10.05',
     actAddress: ''
@@ -81,7 +81,7 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/activity/${activityId}`,
       method: 'get',
       success: (res) => {
-        let actDate = res.data.data['start_time'].split(' ')[0] + '~' + res.data.data['end_time'].split(' ')[0];
+        let actDate = res.data.data['start_time'].replace(/-/g, '.').split(' ')[0] + '~' + res.data.data['end_time'].replace(/-/g, '.').split(' ')[0];
         _self.setData({
           actImage: res.data.data.cover,
           actName: res.data.data.title,

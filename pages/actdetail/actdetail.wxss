@@ -15,7 +15,7 @@
 }
 .desc{
     padding: 20rpx 30rpx;
-    box-shadow: 0 5rpx 6rpx -6rpx black;
+    box-shadow: 0 3px 8px 0 rgba(140,140,140,0.50); 
 }
 .name{
     color: #333333;
@@ -30,6 +30,7 @@
     margin-bottom: 10rpx;
 }
 .content{
+    margin-top: 18rpx;
     color: #666666;
     font-size: 28rpx;
     line-height: 35rpx;
@@ -42,4 +43,8 @@
 .wxParse-p{
     padding: 10rpx 0;
     margin-bottom: 0 !important;
+}
+.wxParse-inline{
+    line-height: 35rpx !important;
+    display: inline !important;
 }

@@ -27,7 +27,8 @@ Page({
     caseList: [
       
     ],
-    slideImages: []
+    slideImages: [],
+    indicatorActiveColor: ''
   },
   
   onLoad: function () {
@@ -138,9 +139,15 @@ Page({
       url: `${util.hostname}/api/${util.app_id}/article`,
       method: 'get',
       success: (res) => {
-        let newsList  = res.data.data;
+        let newsList  = res.data.data.data;
+        console.log(`------newsList-----`);
+        console.log(newsList);
+        let result = [];
+        for(let i=0,len=newsList.length;i<len;i+=2){
+          result.push(newsList.slice(i,i+2));
+        }
         _self.setData({
-          newsList: newsList
+          newsList: result
         })
       },
       fail: (res) => {
@@ -157,6 +164,15 @@ Page({
       method: 'get',
       success: (res) => {
         let slideImages  = res.data.data;
+        if (slideImages.lengtg > 1) {
+          _self.setData({
+            indicatorActiveColor: '#fff'
+          })
+        } else {
+          _self.setData({
+            indicatorActiveColor: 'transparent'
+          })
+        }
         _self.setData({
           slideImages: slideImages
         })

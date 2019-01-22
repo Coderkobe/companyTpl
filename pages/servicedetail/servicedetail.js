@@ -9,7 +9,7 @@ Page({
    */
   data: {
     imghost: util.imghost,
-    coverPicture: '/images/index_service_1.png',
+    coverPicture: '',
     articleTitle: '软件定制及产品方案服务'
   },
 

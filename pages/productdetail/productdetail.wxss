@@ -12,22 +12,27 @@ swiper, .slide-image{
 }
 .desc{
     padding: 20rpx 30rpx;
-    box-shadow: 0 5rpx 6rpx -6rpx black;
+    background-color: #fff;
+    box-shadow: 0 3px 8px 0 rgba(140,140,140,0.50); 
 }
 .name{
+    font-weight: bold;
     color: #333333;
     font-size: 30rpx;
     margin-bottom: 16rpx;
 }
 .detail{
     color: #999999;
+    font-size: 30rpx;
+    font-weight: bold;
 }
 .content{
+    margin-top: 14rpx;
     color: #666666;
     font-size: 28rpx;
     line-height: 35rpx;
     background-color: #fff;
-    padding: 0 30rpx;
+    padding: 0rpx 30rpx;
 }
 .wxParse-h2{
     margin: 0 !important;
@@ -35,4 +40,8 @@ swiper, .slide-image{
 .wxParse-p{
     padding: 10rpx 0;
     margin-bottom: 0 !important;
+}
+.wxParse-inline{
+    line-height: 35rpx !important;
+    display: inline !important;
 }

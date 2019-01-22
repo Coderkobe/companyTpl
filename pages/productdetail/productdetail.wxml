@@ -12,11 +12,11 @@
                 </block>
             </swiper>
         </view>
-        <view class="desc" hover-class="none" hover-stop-propagation="false">
-            <view class="name" hover-class="none" hover-stop-propagation="false">
+        <view class="desc">
+            <view class="name">
                 {{productName}}
             </view>
-            <view class="detail" hover-class="none" hover-stop-propagation="false">
+            <view class="detail">
                 {{productDetail}}
             </view>
         </view>
