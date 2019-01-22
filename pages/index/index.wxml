@@ -23,9 +23,8 @@
       <view class="title">公司新闻</view>
     </view>
     <swiper class="news-slide" indicator-dots="{{indicatorDots}}" autoplay="true" interval="2000" duration="500" vertical="true" circular="true">
-      <block wx:for="{{newsList}}" wx:key="{{index}}">
         <view wx:for="{{newsList}}" wx:key="{{index}}" wx:for-item="item">
-          <swiper-item>
+          <swiper-item catchtouchmove="stopTouchMove">
             <block wx:for="{{item}}" wx:key="{{index}}" wx:for-item="i">
               <view class="list" hover-class="none" hover-stop-propagation="false">
                 <view class="">{{i.title}}</view>
@@ -36,7 +35,6 @@
             </block>
           </swiper-item>
         </view>
-      </block>
     </swiper>
   </view>
   <!-- 主营业务 -->

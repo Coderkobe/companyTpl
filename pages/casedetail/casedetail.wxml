@@ -4,11 +4,11 @@
     <view class="header" hover-class="none" hover-stop-propagation="false">
         <view class="img-box" hover-class="none" hover-stop-propagation="false">
             <swiper   indicator-dots="true" 
-                indicator-active-color="#fff">
+                indicator-active-color="transparent">
                 <block wx:for="{{imgUrls}}" wx:key="{{index}}">
                     <swiper-item>
                         <!-- width="325" height="174" -->
-                        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+                        <image src="{{imghost}}{{item}}" class="slide-image" mode="aspectFill"/>
                     </swiper-item>
                 </block>
             </swiper>

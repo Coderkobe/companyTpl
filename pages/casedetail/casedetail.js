@@ -9,10 +9,10 @@ Page({
    */
   data: {
     imgUrls: [
-      '/images/pdetail.png',
-      '/images/pdetail.png'
+      
     ],
     productName: '小程序：参上名片',
+    imghost: util.imghost
   },
 
   /**
@@ -84,8 +84,8 @@ Page({
       method: 'get',
       success: (res) => {
         _self.setData({
-          coverPicture: res.data.data.cover,
-          articleTitle: res.data.data.title
+          imgUrls: [res.data.data.cover],
+          productName: res.data.data.title
         })
         let article = WxParse.wxParse('content', 'html', res.data.data.content, _self, 5);
         if (article != undefined) {

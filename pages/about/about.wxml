@@ -10,6 +10,9 @@
         </view>
     </view>
     <view class="intro" hover-class="none" hover-stop-propagation="false">
+        <view class="sub-title" hover-class="none" hover-stop-propagation="false">
+            公司简介
+        </view>
         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
         <!-- <view class="sub-title" hover-class="none" hover-stop-propagation="false">
             公司简介
